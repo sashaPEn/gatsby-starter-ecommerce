@@ -50,8 +50,8 @@ const LoginPage = ({location}) => {
   }
   return (
     <Layout location={location}>
-      <SEO title="Login" />
-      <Header as="h1">Log in to your account</Header>
+      <SEO title="Войти" />
+      <Header as="h1">Войти в свой аккаунт</Header>
       <Form
         onSubmit={handleSubmit}
         loading={loading}

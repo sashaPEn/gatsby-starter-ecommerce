@@ -54,13 +54,13 @@ const Register = ({location}) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Register" />
+      <SEO title="Регистрация" />
       <Header as="h1">Create an account</Header>
       <Form onSubmit={handleSubmit} loading={loading} error={!!errors}>
         {apiError.length !== 0 ? handleErrors(errors) : null}
         <Segment>
           <Form.Field>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Имя</label>
             <Input
               id="name"
               fluid
@@ -73,7 +73,7 @@ const Register = ({location}) => {
           {errors.name && <p style={{color: 'red'}}>{errors.name}</p>}
 
           <Form.Field>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Почта</label>
             <Input
               id="email"
               fluid
@@ -85,7 +85,7 @@ const Register = ({location}) => {
           </Form.Field>
           {errors.email && <p style={{color: 'red'}}>{errors.email}</p>}
           <Form.Field>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Пароль</label>
             <Input
               id="password"
               fluid
@@ -97,7 +97,7 @@ const Register = ({location}) => {
           </Form.Field>
           {errors.password && <p style={{color: 'red'}}>{errors.password}</p>}
           <Button type="submit" color="orange">
-            Register
+            Зарегистрировать
           </Button>
         </Segment>
       </Form>
@@ -110,15 +110,15 @@ export default Register
 const validate = values => {
   const errors = {}
   if (!values.email) {
-    errors.email = 'Email address is required'
+    errors.email = 'Почта обязательна для регистрации'
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-    errors.email = 'Email address is invalid'
+    errors.email = 'Почта обязательна для регистрации'
   }
   if (!values.password) {
-    errors.password = 'Password is required'
+    errors.password = 'Пароль обязателен'
   }
   if (!values.name) {
-    errors.name = 'A name is required'
+    errors.name = 'Имя обязательно'
   }
   return errors
 }
